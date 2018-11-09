@@ -10,7 +10,7 @@ import byog.Core.RandomUtils;
 
 
 public class TETile {
-    private final char character; // Do not rename character or the autograder will break.
+    private final char character; 
     private final Color textColor;
     private final Color backgroundColor;
     private final String description;
@@ -35,26 +35,13 @@ public class TETile {
         this.filepath = null;
     }
 
-    /**
-     * Creates a copy of TETile t, except with given textColor.
-     * @param t tile to copy
-     * @param textColor foreground color for tile copy
-     */
+ 
     public TETile(TETile t, Color textColor) {
         this(t.character, textColor, t.backgroundColor, t.description, t.filepath);
     }
 
 
-    /**
-     * Draws the tile to the screen at location x, y. If a valid filepath is provided,
-     * we draw the image located at that filepath to the screen. Otherwise, we fall
-     * back to the character and color representation for the tile.
-     *
-     * Note that the image provided must be of the right size (16x16). It will not be
-     * automatically resized or truncated.
-     * @param x x coordinate
-     * @param y y coordinate
-     */
+  
     public void draw(double x, double y) {
         if (filepath != null) {
             try {
@@ -88,16 +75,6 @@ public class TETile {
         return description;
     }
 
-    /**
-     * Creates a copy of the given tile with a slightly different text color. The new
-     * color will have a red value that is within dr of the current red value,
-     * and likewise with dg and db.
-     * @param t the tile to copy
-     * @param dr the maximum difference in red value
-     * @param dg the maximum difference in green value
-     * @param db the maximum difference in blue value
-     * @param r the random number generator to use
-     */
     public static TETile colorVariant(TETile t, int dr, int dg, int db, Random r) {
         Color oldColor = t.textColor;
         int newRed = newColorValue(oldColor.getRed(), dr, r);
@@ -117,15 +94,7 @@ public class TETile {
         return newValue;
     }
 
-    /**
-     * Converts the given 2D array to a String. Handy for debugging.
-     * Note that since y = 0 is actually the bottom of your world when
-     * drawn using the tile rendering engine, this print method has to
-     * print in what might seem like backwards order (so that the 0th
-     * row gets printed last).
-     * @param world the 2D world to print
-     * @return string representation of the world
-     */
+
     public static String toString(TETile[][] world) {
         int width = world.length;
         int height = world[0].length;
