@@ -7,19 +7,7 @@ import java.util.Random;
 import edu.princeton.cs.introcs.StdDraw;
 import byog.Core.RandomUtils;
 
-/**
- * The TETile object is used to represent a single tile in your game. A 2D array of tiles make up a
- * board, and can be drawn to the screen using the TERenderer class.
- *
- * All TETile objects must have a character, textcolor, and background color to be used to represent
- * the tile when drawn to the screen. You can also optionally provide a path to an image file of an
- * appropriate size (16x16) to be drawn in place of the unicode representation. If the image path
- * provided cannot be found, draw will fallback to using the provided character and color
- * representation, so you are free to use image tiles on your own computer.
- *
- * The provided TETile is immutable, i.e. none of its instance variables can change. You are welcome
- * to make your TETile class mutable, if you prefer.
- */
+
 
 public class TETile {
     private final char character; // Do not rename character or the autograder will break.
@@ -28,14 +16,7 @@ public class TETile {
     private final String description;
     private final String filepath;
 
-    /**
-     * Full constructor for TETile objects.
-     * @param character The character displayed on the screen.
-     * @param textColor The color of the character itself.
-     * @param backgroundColor The color drawn behind the character.
-     * @param description The description of the tile, shown in the GUI on hovering over the tile.
-     * @param filepath Full path to image to be used for this tile. Must be correct size (16x16)
-     */
+
     public TETile(char character, Color textColor, Color backgroundColor, String description,
                   String filepath) {
         this.character = character;
@@ -45,14 +26,7 @@ public class TETile {
         this.filepath = filepath;
     }
 
-    /**
-     * Constructor without filepath. In this case, filepath will be null, so when drawing, we
-     * will not even try to draw an image, and will instead use the provided character and colors.
-     * @param character The character displayed on the screen.
-     * @param textColor The color of the character itself.
-     * @param backgroundColor The color drawn behind the character.
-     * @param description The description of the tile, shown in the GUI on hovering over the tile.
-     */
+ 
     public TETile(char character, Color textColor, Color backgroundColor, String description) {
         this.character = character;
         this.textColor = textColor;
